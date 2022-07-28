@@ -27,39 +27,18 @@ function App() {
           from: "11:30",
           to: "12:00",
         },
+        location: 'Jaipur, Jaipur, Jaipur - 444666',
         about:
           "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor similique sit ullam cumque, commodi tempore consequatur facilis velit aspernatur! Laborum, sint nesciunt. Dolorum, saepe eaque dolor quisquam at aperiam repellat.",
         cover:
-          "https://i.pinimg.com/originals/b6/c2/a7/b6c2a7bd8e80a91ea9b8d7734f8f91ce.jpg",
-        galleryImg1: "https://mapio.net/images-p/2387932.jpg",
-        galleryImg2: "https://mapio.net/images-p/2387932.jpg",
-        galleryImg3: "https://mapio.net/images-p/2387932.jpg",
+          "https://img.freepik.com/premium-psd/summer-fashion-sale-social-media-web-banner-flyer-facebook-cover-design-template_220443-387.jpg?w=2000",
+        galleryImg1: "https://previews.123rf.com/images/kho/kho1305/kho130500329/19758746-beautiful-happy-teen-girls-with-colored-shopping-sale-bags-over-white.jpg",
+        galleryImg2: "https://image.shutterstock.com/image-photo/picture-shocked-young-brunette-woman-260nw-641814016.jpg",
+        galleryImg3: "https://media.istockphoto.com/photos/beautiful-asian-woman-carrying-colorful-bags-shopping-online-with-picture-id1193750118?k=20&m=1193750118&s=612x612&w=0&h=w46Bjw0TuNVSKHOWtMyVIRfvzZ2JSRP4w7Zm02oqCFE=",
         categories: {
           category1: "category1",
           category2: "category2",
           category3: "category3",
-          category4: "category4",
-        },
-      },
-      {
-        id: 1,
-        title: "Sample Store 2",
-        storeHrs: {
-          from: "11:30",
-          to: "12:00",
-        },
-        about:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor similique sit ullam cumque, commodi tempore consequatur facilis velit aspernatur! Laborum, sint nesciunt. Dolorum, saepe eaque dolor quisquam at aperiam repellat.",
-        cover:
-          "https://image.shutterstock.com/image-vector/browser-window-sale-buyers-gadgets-260nw-1216923979.jpg",
-        galleryImg1: "https://mapio.net/images-p/2387932.jpg",
-        galleryImg2: "https://mapio.net/images-p/2387932.jpg",
-        galleryImg3: "https://mapio.net/images-p/2387932.jpg",
-        categories: {
-          category1: "category1",
-          category2: "category2",
-          category3: "category3",
-          category4: "category4",
         },
       },
     ]

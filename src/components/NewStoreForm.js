@@ -39,10 +39,14 @@ export default function NewStoreForm(props) {
   const [openHours, setOpenHours] = useState("");
   const [about, setAbout] = useState("");
   const [location, setLocation] = useState("");
-  const [products, setProducts] = useState("");
+  const [catergory1, setCatergory1] = useState("");
+  const [catergory2, setCatergory2] = useState("");
+  const [catergory3, setCatergory3] = useState("");
   const [toHours, setToHours] = useState("");
   const [coverLink, setCoverLink] = useState("");
-  const [galleryLink, setGalleryLink] = useState("");
+  const [galleryLink1, setGalleryLink1] = useState("");
+  const [galleryLink2, setGalleryLink2] = useState("");
+  const [galleryLink3, setGalleryLink3] = useState("");
   const [successMsgClass, setSuccessMsgClass] = useState("hidden");
   const navigate = useNavigate();
 
@@ -80,16 +84,15 @@ export default function NewStoreForm(props) {
         to: toHours,
       },
       cover: coverLink,
-      galleryImg1: galleryLink,
-      galleryImg2: galleryLink,
-      galleryImg3: galleryLink,
+      galleryImg1: galleryLink1,
+      galleryImg2: galleryLink2,
+      galleryImg3: galleryLink3,
       about: about,
       location: location,
       categories: {
-        category1: products,
-        category2: products,
-        category3: products,
-        category4: products,
+        category1: catergory1,
+        category2: catergory2,
+        category3: catergory3,
       },
     };
     console.log(newStore);
@@ -149,13 +152,13 @@ export default function NewStoreForm(props) {
             />
             <TextField
               id="standard-error"
-              label="Products"
+              label="Address"
               className="textfield"
               onChange={(event) => {
-                setProducts(event.target.value);
+                setLocation(event.target.value);
                 setSuccessMsgClass("hidden");
               }}
-              value={products}
+              value={location}
             />
           </div>
           <div className="mobile_location_inputs">
@@ -172,20 +175,41 @@ export default function NewStoreForm(props) {
             />
             <TextField
               id="standard-error"
-              label="Address"
+              label="Product Category 1"
               className="textfield"
               onChange={(event) => {
-                setLocation(event.target.value);
+                setCatergory1(event.target.value);
                 setSuccessMsgClass("hidden");
               }}
-              value={location}
+              value={catergory1}
+            />
+          </div>
+          <div className="mobile_location_inputs">
+          <TextField
+              id="standard-error"
+              label="Product Category 2"
+              className="textfield"
+              onChange={(event) => {
+                setCatergory2(event.target.value);
+                setSuccessMsgClass("hidden");
+              }}
+              value={catergory2}
+            />
+            <TextField
+              id="standard-error"
+              label="Product Category 3"
+              className="textfield"
+              onChange={(event) => {
+                setCatergory3(event.target.value);
+                setSuccessMsgClass("hidden");
+              }}
+              value={catergory3}
             />
           </div>
           <div className="products_title_inputs">
-            <Typography>Open Hours :-</Typography>
             <TextField
               id="standard-error"
-              label="From"
+              label="Opens From"
               className="textfield"
               type="time"
               onChange={(event) => {
@@ -222,13 +246,36 @@ export default function NewStoreForm(props) {
 
             <TextField
               id="standard-error"
-              label="Gallery Link"
+              label="Gallery Link 1"
               className="textfield"
               onChange={(event) => {
-                setGalleryLink(event.target.value);
+                setGalleryLink1(event.target.value);
                 setSuccessMsgClass("hidden");
               }}
-              value={galleryLink}
+              value={galleryLink1}
+            />
+          </div>
+          <div className="image-inputs">
+            <TextField
+              id="standard-error"
+              label="Gallery Link 2"
+              className="textfield"
+              onChange={(event) => {
+                setGalleryLink2(event.target.value);
+                setSuccessMsgClass("hidden");
+              }}
+              value={galleryLink2}
+            />
+
+            <TextField
+              id="standard-error"
+              label="Gallery Link 3"
+              className="textfield"
+              onChange={(event) => {
+                setGalleryLink3(event.target.value);
+                setSuccessMsgClass("hidden");
+              }}
+              value={galleryLink3}
             />
           </div>
         </CardContent>
