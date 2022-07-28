@@ -9,9 +9,12 @@ import StoreList from "./components/StoreList";
 import ViewStore from "./components/ViewStore";
 import AddButton from "./components/AddStore";
 import NewStoreForm from "./components/NewStoreForm";
+import SearchList from "./components/SearchList";
 
 const StoreListContext = createContext();
 const SetStoreListContext = createContext();
+const SearchKey = createContext();
+const SetSearchKey = createContext();
 
 function App() {
   const [loginState, setLoginState] = useState("loggedOut");
@@ -90,6 +93,8 @@ function App() {
     <BrowserRouter>
       <StoreListContext.Provider value={storeList}>
         <SetStoreListContext.Provider value={setStoreList}>
+        <SearchKey.Provider value={searchKey}>
+        <SetSearchKey.Provider value={setSearchKey}>
           {loginState === "loggingIn" ? (
             <div className="loader">
               <Circles color="rgb(0, 110, 255)" height={80} width={80} />
@@ -118,6 +123,15 @@ function App() {
                     }
                   />
                   <Route
+                    path="/Search"
+                    element={
+                      <>
+                        <SearchList setStoreDetails={setStoreDetails} />
+                        <AddButton />
+                      </>
+                    }
+                  />
+                  <Route
                     path="/ViewStore"
                     element={
                       <>
@@ -135,6 +149,8 @@ function App() {
               <LoginForm setLoginState={setLoginState} />
             </div>
           )}
+        </SetSearchKey.Provider>
+        </SearchKey.Provider>
         </SetStoreListContext.Provider>
       </StoreListContext.Provider>
     </BrowserRouter>
@@ -144,3 +160,5 @@ function App() {
 export default App;
 export { StoreListContext };
 export { SetStoreListContext };
+export { SearchKey };
+export { SetSearchKey };
