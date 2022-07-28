@@ -14,7 +14,7 @@ const StoreListContext = createContext();
 const SetStoreListContext = createContext();
 
 function App() {
-  const [loginState, setLoginState] = useState("loggedIn");
+  const [loginState, setLoginState] = useState("loggedOut");
   const [storeDetails, setStoreDetails] = useState(
     JSON.parse(localStorage.getItem("storeDetails")) || {}
   );
