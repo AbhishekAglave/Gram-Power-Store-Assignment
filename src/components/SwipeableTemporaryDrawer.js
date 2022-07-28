@@ -9,8 +9,6 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import { IconButton } from "@material-ui/core";
-import FavoriteRoundedIcon from "@material-ui/icons/FavoriteRounded";
-import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
 import ArrowBackIosOutlinedIcon from "@material-ui/icons/ArrowBackIosOutlined";
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import { NavLink } from "react-router-dom";
