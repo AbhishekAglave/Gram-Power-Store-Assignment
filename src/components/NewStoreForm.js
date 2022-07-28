@@ -53,28 +53,6 @@ export default function NewStoreForm(props) {
   let storeId = localStorage.getItem("lastStoreId") || 3;
   function addStore(event) {
     event.preventDefault();
-
-    // {
-    //   id: 0,
-    //   title: "Sample Store",
-    //   storeHrs: {
-    //     from: "11:30",
-    //     to: "12:00",
-    //   },
-    //   about:
-    //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor similique sit ullam cumque, commodi tempore consequatur facilis velit aspernatur! Laborum, sint nesciunt. Dolorum, saepe eaque dolor quisquam at aperiam repellat.",
-    //   cover:
-    //     "https://i.pinimg.com/originals/b6/c2/a7/b6c2a7bd8e80a91ea9b8d7734f8f91ce.jpg",
-    //   galleryImg1: "https://mapio.net/images-p/2387932.jpg",
-    //   galleryImg2: "https://mapio.net/images-p/2387932.jpg",
-    //   galleryImg3: "https://mapio.net/images-p/2387932.jpg",
-    //   categories: {
-    //     category1: "category1",
-    //     category2: "category2",
-    //     category3: "category3",
-    //     category4: "category4",
-    //   },
-    // },
     storeId = Number(storeId);
     const newStore = {
       id: storeId + 1,
@@ -95,9 +73,22 @@ export default function NewStoreForm(props) {
         category3: catergory3,
       },
     };
-    console.log(newStore);
     localStorage.setItem("lastStoreId", storeId + 1);
     setStoreList([...storeList, newStore]);
+
+    setAbout('');
+    setTitle('');
+    setCatergory1('');
+    setCatergory2('');
+    setCatergory3('');
+    setCoverLink('');
+    setGalleryLink1('');
+    setGalleryLink2('');
+    setGalleryLink3('');
+    setLocation('');
+    setOpenHours('');
+    setToHours('');
+
     setSuccessMsgClass("success_msg");
   }
 
