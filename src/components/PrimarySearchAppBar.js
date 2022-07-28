@@ -155,7 +155,7 @@ export default function PrimarySearchAppBar(props) {
           <SwipeableTemporaryDrawer />
           <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
             <Typography className={classes.title} variant="h5" noWrap>
-              My Contacts
+              Gram Power | Store
             </Typography>
           </Link>
           <div className={classes.grow} />

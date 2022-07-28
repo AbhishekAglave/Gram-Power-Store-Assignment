@@ -3,44 +3,10 @@
 }
 /********* Main element Styling ********/
 
-.contact-list {
-  height: 90vh;
-  overflow-y: scroll;
-}
 .main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.contact-item {
-  display: flex;
-  align-items: center;
-  background-color: lightgray;
-}
-.name-div {
-  width: 220px;
-}
-.phone-div {
-  width: 180px;
-}
-.email-div {
-  width: 350px;
-}
-@media screen and (max-width: 992px) {
-  .email-div {
-    display: none;
-  }
-}
-@media screen and (max-width: 720px) {
-  .name-div {
-    width: 170px;
-  }
-  .phone-div {
-    display: none;
-  }
-  .email-div {
-    display: none;
-  }
 }
 .add_button {
   position: fixed;
@@ -49,7 +15,7 @@
 }
 /********** add new contact form styling **********/
 
-.form-actions{
+.form-actions {
   position: relative;
   bottom: 10px;
   right: 10px;
@@ -57,14 +23,14 @@
   justify-content: right;
   color: rgba(0, 255, 0, 0.432);
 }
-.success_msg{
-  visibility: 'visible';
-  background-color: rgba(0, 255, 0, 0.300);
+.success_msg {
+  visibility: "visible";
+  background-color: rgba(0, 255, 0, 0.3);
   color: green;
   padding-left: 5px;
   border-radius: 5px;
 }
-.success_msg button{
+.success_msg button {
   border: none;
   outline: none;
   background-color: transparent;
@@ -73,41 +39,41 @@
   cursor: pointer;
 }
 
-.error_msg{
-  visibility: 'visible';
+.error_msg {
+  visibility: "visible";
   background-color: rgba(255, 0, 0, 0.3);
   color: rgb(128, 0, 0);
   padding-left: 5px;
   border-radius: 5px;
 }
-.error_msg button{
+.error_msg button {
   border: none;
   outline: none;
   background-color: transparent;
   color: black;
   cursor: pointer;
 }
-.hidden{
+.hidden {
   visibility: hidden;
 }
-.formBackButton{
+.formBackButton {
   padding-bottom: 4px;
 }
-.cardBackButton{
+.cardBackButton {
   padding-bottom: 4px;
 }
-.login_fields{
+.login_fields {
   display: flex;
   flex-direction: column;
 }
 
-.loginForm{
+.loginForm {
   background-color: #3f51b5;
   display: flex;
   height: 100vh;
   justify-content: center;
 }
-.loader{
+.loader {
   position: absolute;
   background-color: rgba(89, 139, 204, 0.205);
   width: 100vw;
@@ -116,4 +82,108 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
+}
+
+.store_details_container {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0px 0px 5px 0px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.cover_img {
+  grid-column: 1/3;
+  width: 100%;
+  height: 90%;
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(190, 190, 190);
+}
+.photo_gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo_gallery img{
+  margin: 10px;
+  border-radius: 5px;
+  width: 150px;
+  height: 150px;
+}
+.about_us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.product_range {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.store_hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 32px;
+}
+.store_hours p{
+  margin: 2px;
+}
+.store_location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-row: 3/6;
+  grid-column: 2/3;
+  padding: 10px;
+
+}
+.product_range p{
+  margin: 2px;
+}
+.title_div{
+  width: 300px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 950px) {
+
+  .store_details_container{
+    grid-template-columns: 1fr;
+  }
+  .photo_gallery{
+    grid-column: 1/3;
+  }
+  .photo_gallery img{
+    margin: 10px;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+  }
+  .about_us{
+    grid-column: 1/3;
+    grid-row: 3/4;
+  }
+  .store_location{
+    grid-column: 1/3;
+    grid-row: 6/7;
+  }
+  .product_range{
+    grid-row: 5/6;
+  }
+  .store_hours{
+    padding-top: 10px;
+  }
 }

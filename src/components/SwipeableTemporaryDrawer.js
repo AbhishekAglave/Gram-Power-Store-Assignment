@@ -65,7 +65,7 @@ export default function SwipeableTemporaryDrawer(props) {
                   color: "#3f51b5",
                 }}
               >
-                My Contacts
+                Gram Power
               </span>
             }
           />
@@ -80,28 +80,6 @@ export default function SwipeableTemporaryDrawer(props) {
               <HomeRoundedIcon />
             </ListItemIcon>
             <ListItemText primary="Home" />
-          </ListItem>
-        </NavLink>
-        <NavLink
-          to="/Favorites"
-          style={{ textDecoration: "none", color: "inherit" }}
-        >
-          <ListItem button>
-            <ListItemIcon>
-              <FavoriteRoundedIcon />
-            </ListItemIcon>
-            <ListItemText primary="Favorites" />
-          </ListItem>
-        </NavLink>
-        <NavLink
-          to="/Trash"
-          style={{ textDecoration: "none", color: "inherit" }}
-        >
-          <ListItem button>
-            <ListItemIcon>
-              <DeleteRoundedIcon />
-            </ListItemIcon>
-            <ListItemText primary="Trash" />
           </ListItem>
         </NavLink>
       </List>
