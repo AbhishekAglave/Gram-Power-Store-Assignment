@@ -6,6 +6,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { useNavigate } from "react-router-dom";
 import StorefrontIcon from "@material-ui/icons/Storefront";
 import DeleteOutlinedIcon from "@material-ui/icons/DeleteOutlined";
+import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import { StoreListContext } from "../App";
 import { SetStoreListContext } from "../App";
 
@@ -20,6 +21,12 @@ function StoreItem(props) {
     navigate("/ViewStore");
   }
 
+  function editStore(){
+    setStoreDetails(props.store);
+    localStorage.setItem("storeDetails", JSON.stringify(props.store));
+    navigate("/EditStore");
+  }
+
   function deleteStore(){
     const storeId = props.store.id;
     const newStoreList = storeList.filter((store)=>{
@@ -27,6 +34,7 @@ function StoreItem(props) {
     })
     setStoreList(newStoreList);
   }
+
   useEffect(() => {
     localStorage.setItem("storeList", JSON.stringify(storeList));
   }, [storeList]);
@@ -44,6 +52,11 @@ function StoreItem(props) {
           <ListItemText primary={props.store.title} />
         </div>
       </div>
+      <ListItemIcon onClick={editStore}>
+        <IconButton>
+          <EditOutlinedIcon/>
+        </IconButton>
+      </ListItemIcon>
       <ListItemIcon onClick={deleteStore}>
         <IconButton>
           <DeleteOutlinedIcon/>

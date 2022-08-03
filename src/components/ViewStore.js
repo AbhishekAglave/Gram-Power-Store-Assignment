@@ -18,25 +18,25 @@ function ViewStore(props) {
         <div className="store_hours">
           <h4>Shope Hours</h4>
           <p>
-            Monday: {props.storeDetails.storeHrs.from} -            {props.storeDetails.storeHrs.to}
+            Monday: {props.storeDetails.storeHrsMon.from} -  {props.storeDetails.storeHrsMon.to}
           </p>
           <p>
-            Tuesday: {props.storeDetails.storeHrs.from} - {props.storeDetails.storeHrs.to}
+            Tuesday: {props.storeDetails.storeHrsTue.from} - {props.storeDetails.storeHrsTue.to}
           </p>
           <p>
-            Wednesday: {props.storeDetails.storeHrs.from} - {props.storeDetails.storeHrs.to}
+            Wednesday: {props.storeDetails.storeHrsWed.from} - {props.storeDetails.storeHrsWed.to}
           </p>
           <p>
-            Thursday: {props.storeDetails.storeHrs.from} - {props.storeDetails.storeHrs.to}
+            Thursday: {props.storeDetails.storeHrsThu.from} - {props.storeDetails.storeHrsThu.to}
           </p>
           <p>
-            Friday: {props.storeDetails.storeHrs.from} - {props.storeDetails.storeHrs.to}
+            Friday: {props.storeDetails.storeHrsFri.from} - {props.storeDetails.storeHrsFri.to}
           </p>
           <p>
-            Saturday: {props.storeDetails.storeHrs.from} - {props.storeDetails.storeHrs.to}
+            Saturday: {props.storeDetails.storeHrsSat.from} - {props.storeDetails.storeHrsSat.to}
           </p>
           <p>
-            Sunday: {props.storeDetails.storeHrs.from} - {props.storeDetails.storeHrs.to}
+            Sunday: {props.storeDetails.storeHrsSun.from} - {props.storeDetails.storeHrsSun.to}
           </p>
         </div>
         <div className="about_us">

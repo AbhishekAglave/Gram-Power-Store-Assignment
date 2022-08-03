@@ -153,9 +153,18 @@
 .title_div{
   width: 300px;
 }
-
-
-
+.time_field{
+  display: flex;
+  justify-content: space-between;
+}
+.time_section{
+  margin-top: 20px;
+  padding: 10px;
+}
+.day_label{
+  display: inline-block;
+  width: 90px;
+}
 
 
 

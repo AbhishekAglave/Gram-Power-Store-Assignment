@@ -9,6 +9,7 @@ import StoreList from "./components/StoreList";
 import ViewStore from "./components/ViewStore";
 import AddButton from "./components/AddStore";
 import NewStoreForm from "./components/NewStoreForm";
+import EditStoreForm from "./components/EditStoreForm";
 import SearchList from "./components/SearchList";
 
 const StoreListContext = createContext();
@@ -17,7 +18,7 @@ const SearchKey = createContext();
 const SetSearchKey = createContext();
 
 function App() {
-  const [loginState, setLoginState] = useState("loggedOut");
+  const [loginState, setLoginState] = useState("loggedIn");
   const [storeDetails, setStoreDetails] = useState(
     JSON.parse(localStorage.getItem("storeDetails")) || {}
   );
@@ -26,51 +27,33 @@ function App() {
       {
         id: 0,
         title: "Sample Store 1",
-        storeHrs: {
-          from: "11:30",
+        storeHrsMon: {
+          from: "mon",
           to: "12:00",
         },
-        location: 'Jaipur, Jaipur, Jaipur - 444666',
-        about:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor similique sit ullam cumque, commodi tempore consequatur facilis velit aspernatur! Laborum, sint nesciunt. Dolorum, saepe eaque dolor quisquam at aperiam repellat.",
-        cover:
-          "https://img.freepik.com/premium-psd/summer-fashion-sale-social-media-web-banner-flyer-facebook-cover-design-template_220443-387.jpg?w=2000",
-        galleryImg1: "https://previews.123rf.com/images/kho/kho1305/kho130500329/19758746-beautiful-happy-teen-girls-with-colored-shopping-sale-bags-over-white.jpg",
-        galleryImg2: "https://image.shutterstock.com/image-photo/picture-shocked-young-brunette-woman-260nw-641814016.jpg",
-        galleryImg3: "https://media.istockphoto.com/photos/beautiful-asian-woman-carrying-colorful-bags-shopping-online-with-picture-id1193750118?k=20&m=1193750118&s=612x612&w=0&h=w46Bjw0TuNVSKHOWtMyVIRfvzZ2JSRP4w7Zm02oqCFE=",
-        categories: {
-          category1: "category1",
-          category2: "category2",
-          category3: "category3",
+        storeHrsTue:{
+          from: "tue",
+          to: "01:00",
         },
-      },
-      {
-        id: 1,
-        title: "Sample Store 2",
-        storeHrs: {
-          from: "11:30",
-          to: "12:00",
+        storeHrsWed:{
+          from: "wed",
+          to: "01:00",
         },
-        location: 'Jaipur, Jaipur, Jaipur - 444666',
-        about:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor similique sit ullam cumque, commodi tempore consequatur facilis velit aspernatur! Laborum, sint nesciunt. Dolorum, saepe eaque dolor quisquam at aperiam repellat.",
-        cover:
-          "https://img.freepik.com/premium-psd/summer-fashion-sale-social-media-web-banner-flyer-facebook-cover-design-template_220443-387.jpg?w=2000",
-        galleryImg1: "https://previews.123rf.com/images/kho/kho1305/kho130500329/19758746-beautiful-happy-teen-girls-with-colored-shopping-sale-bags-over-white.jpg",
-        galleryImg2: "https://image.shutterstock.com/image-photo/picture-shocked-young-brunette-woman-260nw-641814016.jpg",
-        galleryImg3: "https://media.istockphoto.com/photos/beautiful-asian-woman-carrying-colorful-bags-shopping-online-with-picture-id1193750118?k=20&m=1193750118&s=612x612&w=0&h=w46Bjw0TuNVSKHOWtMyVIRfvzZ2JSRP4w7Zm02oqCFE=",
-        categories: {
-          category1: "category1",
-          category2: "category2",
-          category3: "category3",
+        storeHrsThu:{
+          from: "thu",
+          to: "01:00",
         },
-      },
-      {
-        id: 2,
-        title: "Sample Store 3",
-        storeHrs: {
-          from: "11:30",
-          to: "12:00",
+        storeHrsFri:{
+          from: "fri",
+          to: "01:00",
+        },
+        storeHrsSat:{
+          from: "sat",
+          to: "01:00",
+        },
+        storeHrsSun:{
+          from: "sun",
+          to: "00:00",
         },
         location: 'Jaipur, Jaipur, Jaipur - 444666',
         about:
@@ -141,6 +124,7 @@ function App() {
                     }
                   />
                   <Route path="/AddNewStore" element={<NewStoreForm />} />
+                  <Route path="/EditStore" element={<EditStoreForm />} />
                 </Routes>
               </main>
             </div>

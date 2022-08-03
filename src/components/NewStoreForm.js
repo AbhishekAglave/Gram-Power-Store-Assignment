@@ -36,13 +36,39 @@ export default function NewStoreForm(props) {
   const storeTitle = useRef(null);
 
   const [title, setTitle] = useState("");
-  const [openHours, setOpenHours] = useState("");
+  const [storeHrsMon, setStoreHrsMon] = useState({
+    from: "",
+    to: "Close",
+  });
+  const [storeHrsTue, setStoreHrsTue] = useState({
+    from: "",
+    to: "Close",
+  });
+  const [storeHrsWed, setStoreHrsWed] = useState({
+    from: "",
+    to: "Close",
+  });
+  const [storeHrsThu, setStoreHrsThu] = useState({
+    from: "",
+    to: "Close",
+  });
+  const [storeHrsFri, setStoreHrsFri] = useState({
+    from: "",
+    to: "Close",
+  });
+  const [storeHrsSat, setStoreHrsSat] = useState({
+    from: "",
+    to: "Close",
+  });
+  const [storeHrsSun, setStoreHrsSun] = useState({
+    from: "",
+    to: "Close",
+  });
   const [about, setAbout] = useState("");
   const [location, setLocation] = useState("");
   const [catergory1, setCatergory1] = useState("");
   const [catergory2, setCatergory2] = useState("");
   const [catergory3, setCatergory3] = useState("");
-  const [toHours, setToHours] = useState("");
   const [coverLink, setCoverLink] = useState("");
   const [galleryLink1, setGalleryLink1] = useState("");
   const [galleryLink2, setGalleryLink2] = useState("");
@@ -54,13 +80,28 @@ export default function NewStoreForm(props) {
   function addStore(event) {
     event.preventDefault();
     storeId = Number(storeId);
+
+
+    if(storeHrsMon.from!==""&&storeHrsMon.to==='Close') alert('Please choose closing time');
+    if(storeHrsTue.from!==""&&storeHrsTue.to==='Close') alert('Please choose closing time');
+    if(storeHrsWed.from!==""&&storeHrsWed.to==='Close') alert('Please choose closing time');
+    if(storeHrsThu.from!==""&&storeHrsThu.to==='Close') alert('Please choose closing time');
+    if(storeHrsFri.from!==""&&storeHrsFri.to==='Close') alert('Please choose closing time');
+    if(storeHrsSat.from!==""&&storeHrsSat.to==='Close') alert('Please choose closing time');
+    if(storeHrsSun.from!==""&&storeHrsSun.to==='Close') alert('Please choose closing time');
+
+
+
     const newStore = {
       id: storeId + 1,
       title: title,
-      storeHrs: {
-        from: openHours,
-        to: toHours,
-      },
+      storeHrsMon: storeHrsMon,
+      storeHrsTue: storeHrsTue,
+      storeHrsWed: storeHrsWed,
+      storeHrsThu: storeHrsThu,
+      storeHrsFri: storeHrsFri,
+      storeHrsSat: storeHrsSat,
+      storeHrsSun: storeHrsSun,
       cover: coverLink,
       galleryImg1: galleryLink1,
       galleryImg2: galleryLink2,
@@ -75,20 +116,16 @@ export default function NewStoreForm(props) {
     };
     localStorage.setItem("lastStoreId", storeId + 1);
     setStoreList([...storeList, newStore]);
-
-    setAbout('');
-    setTitle('');
-    setCatergory1('');
-    setCatergory2('');
-    setCatergory3('');
-    setCoverLink('');
-    setGalleryLink1('');
-    setGalleryLink2('');
-    setGalleryLink3('');
-    setLocation('');
-    setOpenHours('');
-    setToHours('');
-
+    setAbout("");
+    setTitle("");
+    setCatergory1("");
+    setCatergory2("");
+    setCatergory3("");
+    setCoverLink("");
+    setGalleryLink1("");
+    setGalleryLink2("");
+    setGalleryLink3("");
+    setLocation("");
     setSuccessMsgClass("success_msg");
   }
 
@@ -127,7 +164,7 @@ export default function NewStoreForm(props) {
             </button>
           </Typography>
 
-          <div className="name_inputs">
+          <div>
             <TextField
               id="standard-error"
               label="Title"
@@ -152,7 +189,7 @@ export default function NewStoreForm(props) {
               value={location}
             />
           </div>
-          <div className="mobile_location_inputs">
+          <div>
             <TextField
               id="standard-error"
               label="About"
@@ -175,8 +212,8 @@ export default function NewStoreForm(props) {
               value={catergory1}
             />
           </div>
-          <div className="mobile_location_inputs">
-          <TextField
+          <div>
+            <TextField
               id="standard-error"
               label="Product Category 2"
               className="textfield"
@@ -197,33 +234,287 @@ export default function NewStoreForm(props) {
               value={catergory3}
             />
           </div>
-          <div className="products_title_inputs">
-            <TextField
-              id="standard-error"
-              label="Opens From"
-              className="textfield"
-              type="time"
-              onChange={(event) => {
-                setOpenHours(event.target.value);
-                setSuccessMsgClass("hidden");
-              }}
-              value={openHours}
-            />
+          <div className="time_section">
+            <div className="time_field">
+              <span className="day_label">Monday</span>
+              <label>
+                From:{" "}
+                <input
+                  type="time"
+                  onChange={(event) => {
+                    setStoreHrsMon({
+                      from: event.target.value,
+                      to: storeHrsMon.to,
+                    });
+                    setSuccessMsgClass("hidden");
+                  }}
+                  value={storeHrsMon.from}
+                />
+              </label>
+              <label>
+                To:{" "}
+                <input
+                  type="time"
+                  onChange={(event) => {
+                    if (storeHrsMon.from === "") {
+                      alert("Please choose opening time first");
+                    } else {
+                      setStoreHrsMon({
+                        from: storeHrsMon.from,
+                        to: event.target.value,
+                      });
+                    }
+                    setSuccessMsgClass("hidden");
+                  }}
+                  value={storeHrsMon.to}
+                />
+              </label>
+            </div>
+            <div className="time_field">
+            <span className="day_label">Tuesday</span>
+              <label>
+                From:{" "}
+                <input
+                  type="time"
+                  onChange={(event) => {
+                    setStoreHrsTue({
+                      from: event.target.value,
+                      to: storeHrsTue.to,
+                    });
+                    setSuccessMsgClass("hidden");
+                  }}
+                  value={storeHrsTue.from}
+                />
+              </label>
+              <label>
+                To:{" "}
+                <input
+                  type="time"
+                  onChange={(event) => {
+                    if (storeHrsTue.from === "") {
+                      alert("Please choose opening time first");
+                    } else {
+                      setStoreHrsTue({
+                        from: storeHrsTue.from,
+                        to: event.target.value,
+                      });
+                    }
+                    setSuccessMsgClass("hidden");
+                  }}
+                  value={storeHrsTue.to}
+                />
+              </label>
+            </div>
 
-            <TextField
-              id="standard-error"
-              label="To"
-              className="textfield"
-              type="time"
-              onChange={(event) => {
-                setToHours(event.target.value);
-                setSuccessMsgClass("hidden");
-              }}
-              value={toHours}
-            />
+
+
+
+
+            <div className="time_field">
+            <span className="day_label">Wednesday</span>
+              <label>
+                From:{" "}
+                <input
+                  type="time"
+                  onChange={(event) => {
+                    setStoreHrsWed({
+                      from: event.target.value,
+                      to: storeHrsWed.to,
+                    });
+                    setSuccessMsgClass("hidden");
+                  }}
+                  value={storeHrsWed.from}
+                />
+              </label>
+              <label>
+                To:{" "}
+                <input
+                  type="time"
+                  onChange={(event) => {
+                    if (storeHrsWed.from === "") {
+                      alert("Please choose opening time first");
+                    } else {
+                      setStoreHrsWed({
+                        from: storeHrsWed.from,
+                        to: event.target.value,
+                      });
+                    }
+                    setSuccessMsgClass("hidden");
+                  }}
+                  value={storeHrsWed.to}
+                />
+              </label>
+            </div>
+
+
+
+
+
+
+
+
+
+            <div className="time_field">
+            <span className="day_label">Thursday</span>
+              <label>
+                From:{" "}
+                <input
+                  type="time"
+                  onChange={(event) => {
+                    setStoreHrsThu({
+                      from: event.target.value,
+                      to: storeHrsThu.to,
+                    });
+                    setSuccessMsgClass("hidden");
+                  }}
+                  value={storeHrsThu.from}
+                />
+              </label>
+              <label>
+                To:{" "}
+                <input
+                  type="time"
+                  onChange={(event) => {
+                    if (storeHrsThu.from === "") {
+                      alert("Please choose opening time first");
+                    } else {
+                      setStoreHrsThu({
+                        from: storeHrsThu.from,
+                        to: event.target.value,
+                      });
+                    }
+                    setSuccessMsgClass("hidden");
+                  }}
+                  value={storeHrsThu.to}
+                />
+              </label>
+            </div>
+
+            <div className="time_field">
+            <span className="day_label">Friday</span>
+              <label>
+                From:{" "}
+                <input
+                  type="time"
+                  onChange={(event) => {
+                    setStoreHrsFri({
+                      from: event.target.value,
+                      to: storeHrsFri.to,
+                    });
+                    setSuccessMsgClass("hidden");
+                  }}
+                  value={storeHrsFri.from}
+                />
+              </label>
+              <label>
+                To:{" "}
+                <input
+                  type="time"
+                  onChange={(event) => {
+                    if (storeHrsFri.from === "") {
+                      alert("Please choose opening time first");
+                    } else {
+                      setStoreHrsFri({
+                        from: storeHrsFri.from,
+                        to: event.target.value,
+                      });
+                    }
+                    setSuccessMsgClass("hidden");
+                  }}
+                  value={storeHrsFri.to}
+                />
+              </label>
+            </div>
+
+
+
+
+
+
+
+
+            <div className="time_field">
+            <span className="day_label">Saturday</span>
+              <label>
+                From:{" "}
+                <input
+                  type="time"
+                  onChange={(event) => {
+                    setStoreHrsSat({
+                      from: event.target.value,
+                      to: storeHrsSat.to,
+                    });
+                    setSuccessMsgClass("hidden");
+                  }}
+                  value={storeHrsSat.from}
+                />
+              </label>
+              <label>
+                To:{" "}
+                <input
+                  type="time"
+                  onChange={(event) => {
+                    if (storeHrsSat.from === "") {
+                      alert("Please choose opening time first");
+                    } else {
+                      setStoreHrsSat({
+                        from: storeHrsSat.from,
+                        to: event.target.value,
+                      });
+                    }
+                    setSuccessMsgClass("hidden");
+                  }}
+                  value={storeHrsSat.to}
+                />
+              </label>
+            </div>
+
+
+
+
+
+
+
+
+
+            <div className="time_field">
+            <span className="day_label">Sunday</span>
+              <label>
+                From:{" "}
+                <input
+                  type="time"
+                  onChange={(event) => {
+                    setStoreHrsSun({
+                      from: event.target.value,
+                      to: storeHrsSun.to,
+                    });
+                    setSuccessMsgClass("hidden");
+                  }}
+                  value={storeHrsSun.from}
+                />
+              </label>
+              <label>
+                To:{" "}
+                <input
+                  type="time"
+                  onChange={(event) => {
+                    if (storeHrsSun.from === "") {
+                      alert("Please choose opening time first");
+                    } else {
+                      setStoreHrsSun({
+                        from: storeHrsSun.from,
+                        to: event.target.value,
+                      });
+                    }
+                    setSuccessMsgClass("hidden");
+                  }}
+                  value={storeHrsSun.to}
+                />
+              </label>
+            </div>
           </div>
 
-          <div className="image-inputs">
+          <div>
             <TextField
               id="standard-error"
               label="Cover Link"
@@ -246,7 +537,7 @@ export default function NewStoreForm(props) {
               value={galleryLink1}
             />
           </div>
-          <div className="image-inputs">
+          <div>
             <TextField
               id="standard-error"
               label="Gallery Link 2"
