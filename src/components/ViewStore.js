@@ -53,32 +53,61 @@ function ViewStore(props) {
         <div className="store_hours">
           <h4>Shope Hours</h4>
           <p>
-            Monday: {props.storeDetails.storeHrsMon.from} -{" "}
-            {props.storeDetails.storeHrsMon.to}
+            Monday:{" "}
+            {props.storeDetails.storeHrsMon.from !== "" &&
+            props.storeDetails.storeHrsMon.to !== ""
+              ? props.storeDetails.storeHrsMon.from +
+                "-" +
+                props.storeDetails.storeHrsMon.to
+              : "Close"}
           </p>
           <p>
-            Tuesday: {props.storeDetails.storeHrsTue.from} -{" "}
-            {props.storeDetails.storeHrsTue.to}
+            Tuesday: {props.storeDetails.storeHrsTue.from !== "" &&
+            props.storeDetails.storeHrsTue.to !== ""
+              ? props.storeDetails.storeHrsTue.from +
+                "-" +
+                props.storeDetails.storeHrsTue.to
+              : "Close"}
           </p>
           <p>
-            Wednesday: {props.storeDetails.storeHrsWed.from} -{" "}
-            {props.storeDetails.storeHrsWed.to}
+            Wednesday: {props.storeDetails.storeHrsWed.from !== "" &&
+            props.storeDetails.storeHrsWed.to !== ""
+              ? props.storeDetails.storeHrsWed.from +
+                "-" +
+                props.storeDetails.storeHrsWed.to
+              : "Close"}
           </p>
           <p>
-            Thursday: {props.storeDetails.storeHrsThu.from} -{" "}
-            {props.storeDetails.storeHrsThu.to}
+            Thursday: {props.storeDetails.storeHrsThu.from !== "" &&
+            props.storeDetails.storeHrsThu.to !== ""
+              ? props.storeDetails.storeHrsThu.from +
+                "-" +
+                props.storeDetails.storeHrsThu.to
+              : "Close"}
           </p>
           <p>
-            Friday: {props.storeDetails.storeHrsFri.from} -{" "}
-            {props.storeDetails.storeHrsFri.to}
+            Friday: {props.storeDetails.storeHrsFri.from !== "" &&
+            props.storeDetails.storeHrsFri.to !== ""
+              ? props.storeDetails.storeHrsFri.from +
+                "-" +
+                props.storeDetails.storeHrsFri.to
+              : "Close"}
           </p>
           <p>
-            Saturday: {props.storeDetails.storeHrsSat.from} -{" "}
-            {props.storeDetails.storeHrsSat.to}
+            Saturday: {props.storeDetails.storeHrsSat.from !== "" &&
+            props.storeDetails.storeHrsSat.to !== ""
+              ? props.storeDetails.storeHrsSat.from +
+                "-" +
+                props.storeDetails.storeHrsSat.to
+              : "Close"}
           </p>
           <p>
-            Sunday: {props.storeDetails.storeHrsSun.from} -{" "}
-            {props.storeDetails.storeHrsSun.to}
+            Sunday: {props.storeDetails.storeHrsSun.from !== "" &&
+            props.storeDetails.storeHrsSun.to !== ""
+              ? props.storeDetails.storeHrsSun.from +
+                "-" +
+                props.storeDetails.storeHrsSun.to
+              : "Close"}
           </p>
         </div>
         <div className="about_us">

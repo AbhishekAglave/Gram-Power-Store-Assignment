@@ -297,31 +297,31 @@ export default function EditStoreForm(props) {
     setLocation("");
     setStoreHrsMon({
       from: "",
-      to: "Close",
+      to: "",
     });
     setStoreHrsTue({
       from: "",
-      to: "Close",
+      to: "",
     });
     setStoreHrsWed({
       from: "",
-      to: "Close",
+      to: "",
     });
     setStoreHrsThu({
       from: "",
-      to: "Close",
+      to: "",
     });
     setStoreHrsFri({
       from: "",
-      to: "Close",
+      to: "",
     });
     setStoreHrsSat({
       from: "",
-      to: "Close",
+      to: "",
     });
     setStoreHrsSun({
       from: "",
-      to: "Close",
+      to: "",
     });
     setSuccessMsgClass("success_msg");
     window.scrollTo(0, 0);
@@ -511,14 +511,12 @@ export default function EditStoreForm(props) {
                 <input
                   type="time"
                   onChange={(event) => {
-                    if (storeHrsMon.from === "") {
-                      alert("Please choose opening time first");
-                    } else {
+
                       setStoreHrsMon({
                         from: storeHrsMon.from,
                         to: event.target.value,
                       });
-                    }
+                    
                     setSuccessMsgClass("hidden");
                   }}
                   value={storeHrsMon.to}
@@ -546,14 +544,12 @@ export default function EditStoreForm(props) {
                 <input
                   type="time"
                   onChange={(event) => {
-                    if (storeHrsTue.from === "") {
-                      alert("Please choose opening time first");
-                    } else {
+         
                       setStoreHrsTue({
                         from: storeHrsTue.from,
                         to: event.target.value,
                       });
-                    }
+                    
                     setSuccessMsgClass("hidden");
                   }}
                   value={storeHrsTue.to}
@@ -582,14 +578,12 @@ export default function EditStoreForm(props) {
                 <input
                   type="time"
                   onChange={(event) => {
-                    if (storeHrsWed.from === "") {
-                      alert("Please choose opening time first");
-                    } else {
+         
                       setStoreHrsWed({
                         from: storeHrsWed.from,
                         to: event.target.value,
                       });
-                    }
+                    
                     setSuccessMsgClass("hidden");
                   }}
                   value={storeHrsWed.to}
@@ -618,14 +612,12 @@ export default function EditStoreForm(props) {
                 <input
                   type="time"
                   onChange={(event) => {
-                    if (storeHrsThu.from === "") {
-                      alert("Please choose opening time first");
-                    } else {
+          
                       setStoreHrsThu({
                         from: storeHrsThu.from,
                         to: event.target.value,
                       });
-                    }
+                    
                     setSuccessMsgClass("hidden");
                   }}
                   value={storeHrsThu.to}
@@ -654,14 +646,12 @@ export default function EditStoreForm(props) {
                 <input
                   type="time"
                   onChange={(event) => {
-                    if (storeHrsFri.from === "") {
-                      alert("Please choose opening time first");
-                    } else {
+         
                       setStoreHrsFri({
                         from: storeHrsFri.from,
                         to: event.target.value,
                       });
-                    }
+                    
                     setSuccessMsgClass("hidden");
                   }}
                   value={storeHrsFri.to}
@@ -690,14 +680,12 @@ export default function EditStoreForm(props) {
                 <input
                   type="time"
                   onChange={(event) => {
-                    if (storeHrsSat.from === "") {
-                      alert("Please choose opening time first");
-                    } else {
+       
                       setStoreHrsSat({
                         from: storeHrsSat.from,
                         to: event.target.value,
                       });
-                    }
+                    
                     setSuccessMsgClass("hidden");
                   }}
                   value={storeHrsSat.to}
@@ -726,14 +714,12 @@ export default function EditStoreForm(props) {
                 <input
                   type="time"
                   onChange={(event) => {
-                    if (storeHrsSun.from === "") {
-                      alert("Please choose opening time first");
-                    } else {
+         
                       setStoreHrsSun({
                         from: storeHrsSun.from,
                         to: event.target.value,
                       });
-                    }
+                    
                     setSuccessMsgClass("hidden");
                   }}
                   value={storeHrsSun.to}

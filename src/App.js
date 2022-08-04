@@ -53,8 +53,8 @@ function App() {
           to: "01:00",
         },
         storeHrsSun: {
-          from: "11:00",
-          to: "00:00",
+          from: "",
+          to: "",
         },
         location: "Vaishali Nagar, Jaipur, Rajasthan, India",
         about:
@@ -101,8 +101,8 @@ function App() {
           to: "01:00",
         },
         storeHrsSun: {
-          from: "11:00",
-          to: "00:00",
+          from: "",
+          to: "",
         },
         location: "Waman Nagar, Khamgaon, Buldhana, Maharashtra, India",
 
@@ -177,7 +177,10 @@ function App() {
                         }
                       />
                       <Route path="/AddNewStore" element={<NewStoreForm />} />
-                      <Route path="/EditStore" element={<EditStoreForm storeDetails={storeDetails} />} />
+                      <Route
+                        path="/EditStore"
+                        element={<EditStoreForm storeDetails={storeDetails} />}
+                      />
                     </Routes>
                   </main>
                 </div>
