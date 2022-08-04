@@ -15,6 +15,8 @@ function StoreItem(props) {
   const setStoreDetails = props.setStoreDetails;
   const storeList = useContext(StoreListContext);
   const setStoreList = useContext(SetStoreListContext);
+
+
   function viewStore() {
     setStoreDetails(props.store);
     localStorage.setItem("storeDetails", JSON.stringify(props.store));

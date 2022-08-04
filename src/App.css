@@ -165,7 +165,10 @@
   display: inline-block;
   width: 90px;
 }
-
+.store_title{
+  text-align: start;
+  width: 80%;
+}
 
 
 
