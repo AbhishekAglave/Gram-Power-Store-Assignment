@@ -104,7 +104,7 @@ export default function EditStoreForm(props) {
   // const [longitude, setLongitude] = useState();
 
   const searchInput = useRef(null);
-  const [address, setAddress] = useState({});
+  const [address, setAddress] = useState(storeDetails.location);
 
   const storeTitle = useRef(null);
 
@@ -217,7 +217,6 @@ export default function EditStoreForm(props) {
 
   let storeId = storeDetails.id;
 
-
   function editStore(event) {
     event.preventDefault();
     storeId = Number(storeId);
@@ -237,57 +236,55 @@ export default function EditStoreForm(props) {
     if (storeHrsSun.from !== "" && storeHrsSun.to === "Close")
       alert("Please choose closing time");
 
-    const newStore = {
-      id: storeId,
-      title: title,
-      storeHrsMon: storeHrsMon,
-      storeHrsTue: storeHrsTue,
-      storeHrsWed: storeHrsWed,
-      storeHrsThu: storeHrsThu,
-      storeHrsFri: storeHrsFri,
-      storeHrsSat: storeHrsSat,
-      storeHrsSun: storeHrsSun,
-      cover: coverLink,
-      galleryImg1: galleryLink1,
-      galleryImg2: galleryLink2,
-      galleryImg3: galleryLink3,
-      about: about,
-      location: address,
-      categories: {
-        category1: catergory1,
-        category2: catergory2,
-        category3: catergory3,
-      },
-    };
+    // const newStore = {
+    //   id: storeId,
+    //   title: title,
+    //   storeHrsMon: storeHrsMon,
+    //   storeHrsTue: storeHrsTue,
+    //   storeHrsWed: storeHrsWed,
+    //   storeHrsThu: storeHrsThu,
+    //   storeHrsFri: storeHrsFri,
+    //   storeHrsSat: storeHrsSat,
+    //   storeHrsSun: storeHrsSun,
+    //   cover: coverLink,
+    //   galleryImg1: galleryLink1,
+    //   galleryImg2: galleryLink2,
+    //   galleryImg3: galleryLink3,
+    //   about: about,
+    //   location: address,
+    //   categories: {
+    //     category1: catergory1,
+    //     category2: catergory2,
+    //     category3: catergory3,
+    //   },
+    // };
 
-    console.log(newStore);
-
-    const newStoreList = storeList.filter((store)=>{
-      if(store.id===storeId){
-        store.id= storeId;
-        store.title=title;
-        store.storeHrsMon=storeHrsMon;
-        store.storeHrsTue= storeHrsTue;
-        store.storeHrsWed=storeHrsWed;
-        store.storeHrsThu=storeHrsThu;
-        store.storeHrsFri= storeHrsFri;
-        store.storeHrsSat= storeHrsSat;
-        store.storeHrsSun= storeHrsSun;
-        store.cover=coverLink;
-        store.galleryImg1= galleryLink1;
-        store.galleryImg2= galleryLink2;
-        store.galleryImg3=galleryLink3;
-        store.about= about;
-        store.location= address;
-        store.categories.category1=catergory1;
-        store.categories.category2=catergory2;
-        store.categories.category3=catergory3;
+    const newStoreList = storeList.filter((store) => {
+      if (store.id === storeId) {
+        store.id = storeId;
+        store.title = title;
+        store.storeHrsMon = storeHrsMon;
+        store.storeHrsTue = storeHrsTue;
+        store.storeHrsWed = storeHrsWed;
+        store.storeHrsThu = storeHrsThu;
+        store.storeHrsFri = storeHrsFri;
+        store.storeHrsSat = storeHrsSat;
+        store.storeHrsSun = storeHrsSun;
+        store.cover = coverLink;
+        store.galleryImg1 = galleryLink1;
+        store.galleryImg2 = galleryLink2;
+        store.galleryImg3 = galleryLink3;
+        store.about = about;
+        store.location = address;
+        store.categories.category1 = catergory1;
+        store.categories.category2 = catergory2;
+        store.categories.category3 = catergory3;
       }
       return store;
-    })
-
+    });
 
     setStoreList(newStoreList);
+
     setAbout("");
     setTitle("");
     setCatergory1("");
