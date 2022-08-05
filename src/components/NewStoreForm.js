@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 // google api code start
 
-const apiKey = "AIzaSyC5XzGGfn_dVYsNOQPcRICvQ7m3yPTLTuQ";
+const apiKey = "YOUR_API_KEY";
 const mapApiJs = "https://maps.googleapis.com/maps/api/js";
 const geocodeJson = "https://maps.googleapis.com/maps/api/geocode/json";
 
