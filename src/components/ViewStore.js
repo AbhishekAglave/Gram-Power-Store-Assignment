@@ -122,7 +122,7 @@ function ViewStore(props) {
             {center ? (
               <GoogleMapReact
                 bootstrapURLKeys={{
-                  key: "AIzaSyC5XzGGfn_dVYsNOQPcRICvQ7m3yPTLTuQ",
+                  key: "YOUR_API_KEY",
                 }}
                 defaultCenter={defaultProps.center}
                 defaultZoom={defaultProps.zoom}
